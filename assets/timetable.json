@@ -1,0 +1,177 @@
+{
+  "batches": {
+    "E16": {
+      "Monday": [
+
+        {
+          "time": "9:00-10:50",
+          "subject": "P-ADC",
+          "room": "133",
+          "teacher": "Ajit Kumar"
+        },
+        {
+          "time": "11:00-11:50",
+          "subject": "FA, Litr,Psycho,  IE, Litr",
+          "room": "148, 153, ...,  117, 244B",
+          "teacher": "SV, PS, Shweta,  AA, ES"
+        },
+        {
+          "time": "2:00-2:50",
+          "subject": "L-DSP",
+          "room": "228",
+          "teacher": "SVS"
+        },
+        {
+          "time": "3:00-4:50",
+          "subject": "P-ML",
+          "room": "142",
+          "teacher": "ANKUR GUPTA"
+        }
+
+      ],
+      "Tuesday": [
+        {
+          "time": "9:00-10:50",
+          "subject": "P-AE",
+          "room": "224/142",
+          "teacher": "Tikkiwal"
+        },
+        {
+          "time": "11:00-11:50",
+          "subject": "L-ADC",
+          "room": "244B",
+          "teacher": "RKS"
+        },
+        {
+          "time": "12:00-12:50",
+          "subject": "T-UHV",
+          "room": "126",
+          "teacher": "Sakshi Varshney"
+        },
+        {
+          "time": "02:00-2:50",
+          "subject": "T-DSP",
+          "room": "116",
+          "teacher": "KD Tyagi"
+        },
+        {
+          "time": "3:00-3:50",
+          "subject": "L-ML",
+          "room": "CR53",
+          "teacher": "Parul Arora"
+        },
+        {
+          "time": "4:00-4:50",
+          "subject": "T-AE",
+          "room": "116",
+          "teacher": "BR. Chaturvedi"
+        }
+      ],
+      "Wednesday": [
+        {
+          "time": "10:00-11:50",
+          "subject": "P-ML",
+          "room": "134",
+          "teacher": "ANKUR GUPTA"
+        },
+        {
+          "time": "2:00-2:50",
+          "subject": "FA, Litr, IE, Litr",
+          "room": "148, 153, 117, 244B",
+          "teacher": "SV, PS, AA, ES"
+        },
+        {
+          "time": "3:00-3:50",
+          "subject": "L-ADC",
+          "room": "CR54",
+          "teacher": "RKS"
+        },
+        {
+          "time": "4:00-4:50",
+          "subject": "L-UHV",
+          "room": "217",
+          "teacher": "Priyanka Kwatra"
+        }
+      ],
+      "Thursday": [
+        {
+          "time": "9:00-9:50",
+          "subject": "L-AE",
+          "room": "244B",
+          "teacher": "BR. Chaturvedi"
+        },
+        {
+          "time": "11:00-11:50",
+          "subject": "L-UHV",
+          "room": "244B",
+          "teacher": "Priyanka Kwatra"
+        },
+        {
+          "time": "12:00-12:50",
+          "subject": "L-ADC",
+          "room": "244B",
+          "teacher": "RKS"
+        },
+        {
+          "time": "2:00-2:50",
+          "subject": "L-DSP",
+          "room": "CR53",
+          "teacher": "SVS"
+        },
+        {
+          "time": "3:00-3:50",
+          "subject": "T-FA,T-Litr, T-IE",
+          "room": "127, 121, 126",
+          "teacher": "SV, PS, AA"
+        }
+      ],
+      "Friday": [
+
+        {
+          "time": "10:00-10:50",
+          "subject": "T-ADC",
+          "room": "116",
+          "teacher": "RKS"
+        },
+        {
+          "time": "11:00-11:50",
+          "subject": "L-AE",
+          "room": "CR53",
+          "teacher": "BR. Chaturvedi"
+        },
+        {
+          "time": "12:00-12:50",
+          "subject": "L-ML",
+          "room": "CR53",
+          "teacher": "Parul Arora"
+        },
+        {
+          "time": "2:00-2:50",
+          "subject": "L-DSP",
+          "room": "CR53",
+          "teacher": "SVS"
+        }
+      ],
+      "Saturday": [
+        {
+          "time": "9:00-9:50",
+          "subject": "L-ML",
+          "room": "CR53",
+          "teacher": "Parul Arora"
+        },
+        {
+          "time":"10:00-10:50",
+          "subject": "L-AE",
+          "room": "CR53",
+          "teacher": "BR. Chaturvedi"
+        },
+        {
+          "time": "11:00-12:50",
+          "subject": "P-DSP",
+          "room": "134",
+          "teacher": "SVS"
+        }
+      ]
+    }
+  }
+}
