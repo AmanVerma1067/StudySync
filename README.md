@@ -1,13 +1,13 @@
 # StudySync - Timetable App 📚
 
-![StudySync Banner](assets/banner.png) 
+<img src="assets/banner.png" alt="StudySync Banner" width="800" style="border-radius: 8px; border: 1px solid #eee; margin-bottom: 20px;"/>
 
 A beautiful Flutter timetable application that helps students track their class schedules with ease. Features include multi-batch support, day-wise view, and offline caching.
 
 ## Features ✨
 
 - 🗓️ Weekly timetable view with tab navigation
-- 🔄 Pull-to-refresh functionality
+- 🔄 Click-to-refresh functionality
 - 🌙 Dark/Light mode toggle
 - 📱 Offline support with cached data
 - 🎨 Color-coded subjects for quick identification
@@ -17,10 +17,9 @@ A beautiful Flutter timetable application that helps students track their class 
 
 ## Screenshots 📸
 
-| Light Mode                       | Dark Mode                      |
-|----------------------------------|--------------------------------|
-| ![Light Mode](assets/light.jpeg) | ![Dark Mode](assets/dark.jpeg) |
-
+| Light Mode | Dark Mode |
+|------------|-----------|
+| <img src="assets/light.jpeg" alt="Light Mode" width="350" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/dark.jpeg" alt="Dark Mode" width="350" style="border-radius: 8px; border: 1px solid #eee;"/> |
 ## Installation ⚙️
 
 ### Prerequisites
