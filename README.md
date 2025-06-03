@@ -30,20 +30,20 @@ A beautiful Flutter timetable application that helps students track their class 
 - Android Studio/Xcode (for emulator/simulator)
 
 ### Steps
-####1. Clone the repository:
+#### 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/studysync.git
    cd studysync
    ```
-####2. Install dependencies:
+#### 2. Install dependencies:
 ```bash
 flutter pub get
 ```
-####3. Generate splash screen (run once):
+#### 3. Generate splash screen (run once):
 ```bash
 flutter pub run flutter_native_splash:create
 ```
-####4. Run the app:
+#### 4. Run the app:
 ```bash
 flutter run
 ```
