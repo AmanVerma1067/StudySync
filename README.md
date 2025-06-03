@@ -17,9 +17,9 @@ A beautiful Flutter timetable application that helps students track their class 
 
 ## Screenshots 📸
 
-| Light Mode                            | Dark Mode                           |
-|---------------------------------------|-------------------------------------|
-| ![Light Mode](screenshots/light.jpeg) | ![Dark Mode](screenshots/dark.jpeg) |
+| Light Mode                       | Dark Mode                      |
+|----------------------------------|--------------------------------|
+| ![Light Mode](assets/light.jpeg) | ![Dark Mode](assets/dark.jpeg) |
 
 ## Installation ⚙️
 
@@ -62,24 +62,16 @@ lib/
 ```
 ### Dependencies 📦
 - http - For API calls
-
 - shared_preferences - For local caching
-
 - flutter_native_splash - For splash screen
-
 - flutter_launcher_icons - For app icons
 
 ### Contributing 🤝
 1. Contributions are welcome! Please follow these steps:
-
 2. Fork the project
-
 3. Create your feature branch (git checkout -b feature/AmazingFeature)
-
 4. Commit your changes (git commit -m 'Add some amazing feature')
-
 5. Push to the branch (git push origin feature/AmazingFeature)
-
 6. Open a Pull Request
 
 ### Support ❤️
