@@ -1,6 +1,6 @@
 # StudySync - Timetable App 📚
 
-<img src="assets/banner.png" alt="StudySync Banner" width="800" style="border-radius: 8px; border: 1px solid #eee; margin-bottom: 20px;"/>
+<img src="assets/banner.png" alt="StudySync Banner" width="300" style="border-radius: 8px; border: 1px solid #eee; margin-bottom: 20px;"/>
 
 A beautiful Flutter timetable application that helps students track their class schedules with ease. Features include multi-batch support, day-wise view, and offline caching.
 
@@ -17,9 +17,9 @@ A beautiful Flutter timetable application that helps students track their class 
 
 ## Screenshots 📸
 
-| Light Mode | Dark Mode |
-|------------|-----------|
-| <img src="assets/light.jpeg" alt="Light Mode" width="350" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/dark.jpeg" alt="Dark Mode" width="350" style="border-radius: 8px; border: 1px solid #eee;"/> |
+| Light Mode                                                                                                      | Dark Mode                                                                                                     |
+|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| <img src="assets/light.jpeg" alt="Light Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/dark.jpeg" alt="Dark Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> |
 ## Installation ⚙️
 
 ### Prerequisites
@@ -50,14 +50,15 @@ flutter run
 lib/
 ├── main.dart          # App entry point
 ├── screens/
-│   └── timetable.dart # Main timetable screen
+│   └── timetable_screen.dart # Main timetable screen
+├── utils/
+│   └── local_storage.dart # Local storage
 ├── services/
 │   ├── api_service.dart # API communication
-│   └── cache_service.dart # Local storage
 ├── models/
-│   └── timetable.dart # Data models
+│   └── timetable_model.dart # Data models
 └── widgets/
-    └── schedule_card.dart # UI components
+    └── timetable_card.dart # UI components
 ```
 ### Dependencies 📦
 - http - For API calls
