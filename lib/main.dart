@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const StudySyncApp());
@@ -35,12 +36,13 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
   String currentDay = '';
   late TabController _tabController;
   bool isDarkMode = false;
+  bool isLoading = false;
 
   final Map<String, Color> subjectColors = {
-    'ML': Colors.blueAccent,
+    'ADC': Colors.blueAccent,
     'DSP': Colors.purpleAccent,
-    'ADC': Colors.teal,
-    'AE': Colors.orange,
+    'AE': Colors.teal,
+    'ML': Colors.orange,
     'UHV': Colors.indigoAccent,
     'IE': Colors.green,
     'FA': Colors.redAccent,
@@ -51,45 +53,88 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
   @override
   void initState() {
     super.initState();
-    loadTimetable();
     setCurrentDay();
+    loadTimetable();
   }
 
   void setCurrentDay() {
     final now = DateTime.now();
     final weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     final todayIndex = now.weekday - 1;
-
-    setState(() {
-      currentDay = weekdays[todayIndex];
-      if (currentDay == 'Sunday') currentDay = 'Monday';
-      _tabController = TabController(length: 6, vsync: this, initialIndex: weekdays.indexOf(currentDay));
-    });
+    currentDay = weekdays[todayIndex == 6 ? 0 : todayIndex];
+    _tabController = TabController(length: 6, vsync: this, initialIndex: weekdays.indexOf(currentDay));
   }
 
   Future<void> loadTimetable() async {
-    final String response = await rootBundle.loadString('assets/timetable.json');
-    final data = json.decode(response);
+    setState(() => isLoading = true);
+    try {
+      final response = await http.get(
+        Uri.parse('https://ttserver-7zps.onrender.com/api/timetable'),
+        headers: {
+          'x-api-key': '123abc456def789ghi',
+          'Content-Type': 'application/json',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        await cacheTimetable(response.body);
+        applyTimetable(data);
+      } else {
+        await loadCachedTimetable();
+      }
+    } catch (_) {
+      await loadCachedTimetable();
+    }
+    setState(() => isLoading = false);
+  }
+
+  void applyTimetable(List<dynamic> apiData) {
+    final Map<String, dynamic> batchesMap = {};
+
+    for (var batchData in apiData) {
+      final batchName = batchData['batch'] as String;
+      final batchTimetable = Map<String, dynamic>.from(batchData);
+      batchTimetable.remove('batch');
+      batchesMap[batchName] = batchTimetable;
+    }
+
     setState(() {
-      timetable = data['batches'];
-      selectedBatch = timetable.keys.first;
+      timetable = {'batches': batchesMap};
+      selectedBatch = batchesMap.keys.isNotEmpty ? batchesMap.keys.first : '';
     });
   }
 
-  List<Map<String, String>> getClassesForDay(String day) {
-    final classes = timetable[selectedBatch]?[day];
+  Future<void> cacheTimetable(String jsonData) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('cached_timetable', jsonData);
+  }
+
+  Future<void> loadCachedTimetable() async {
+    final prefs = await SharedPreferences.getInstance();
+    final cachedData = prefs.getString('cached_timetable');
+    if (cachedData != null) {
+      final data = json.decode(cachedData);
+      applyTimetable(List<dynamic>.from(data));
+    }
+  }
+
+  List<Map<String, dynamic>> getClassesForDay(String day) {
+    if (timetable['batches'] == null || selectedBatch.isEmpty) return [];
+    final classes = timetable['batches'][selectedBatch]?[day];
     if (classes != null) {
-      return List<Map<String, String>>.from(
-          classes.map((item) => Map<String, String>.from(item))
-      );
+      return List<Map<String, dynamic>>.from(classes);
     } else {
       return [];
     }
   }
 
   Color getSubjectColor(String subject) {
+    final firstSubject = subject.split(',').first.trim();
+    final subjectKey = firstSubject.replaceAll(RegExp(r'^[T|L|P]-?'), '');
+
     for (final key in subjectColors.keys) {
-      if (subject.contains(key)) return subjectColors[key]!;
+      if (subjectKey.contains(key)) return subjectColors[key]!;
     }
     return Colors.grey;
   }
@@ -99,32 +144,56 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
     final days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('📘 StudySync - Timetable'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
-            onPressed: () {
-              setState(() {
-                isDarkMode = !isDarkMode;
-                final mode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
-                // Force rebuild with selected theme mode
-                runApp(MaterialApp(
-                  title: 'StudySync',
-                  debugShowCheckedModeBanner: false,
-                  theme: ThemeData.light(useMaterial3: true),
-                  darkTheme: ThemeData.dark(useMaterial3: true),
-                  themeMode: mode,
-                  home: const TimetableScreen(),
-                ));
-              });
-            },
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppBar(
+          automaticallyImplyLeading: false,
+          title: Stack(
+            children: [
+              // Left: Sync Button
+              Align(
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                  icon: const Icon(Icons.sync),
+                  tooltip: "Sync Timetable",
+                  onPressed: loadTimetable,
+                ),
+              ),
+              // Center: Title
+              const Align(
+                alignment: Alignment.center,
+                child: Text('📘 StudySync - Timetable'),
+              ),
+              // Right: Dark Mode Toggle
+              Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
+                  tooltip: "Toggle Theme",
+                  onPressed: () {
+                    setState(() {
+                      isDarkMode = !isDarkMode;
+                    });
+                    final mode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
+                    runApp(MaterialApp(
+                      title: 'StudySync',
+                      debugShowCheckedModeBanner: false,
+                      theme: ThemeData.light(useMaterial3: true),
+                      darkTheme: ThemeData.dark(useMaterial3: true),
+                      themeMode: mode,
+                      home: const TimetableScreen(),
+                    ));
+                  },
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
-      body: timetable.isEmpty
+      body: isLoading
           ? const Center(child: CircularProgressIndicator())
+          : timetable.isEmpty
+          ? const Center(child: Text("No data available. Check internet connection."))
           : Column(
         children: [
           Padding(
@@ -140,16 +209,14 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
                     value: selectedBatch,
-                    items: timetable.keys.map((String value) {
+                    items: (timetable['batches']?.keys.toList() ?? []).map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value, style: const TextStyle(fontSize: 16)),
                       );
                     }).toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        selectedBatch = value!;
-                      });
+                    onChanged: (String? value) {
+                      setState(() => selectedBatch = value!);
                     },
                     isExpanded: true,
                   ),
@@ -175,7 +242,7 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                   itemCount: classes.length,
                   itemBuilder: (context, index) {
                     final cls = classes[index];
-                    final color = getSubjectColor(cls['subject'] ?? '');
+                    final color = getSubjectColor(cls['subject']?.toString() ?? '');
 
                     return AnimatedContainer(
                       duration: const Duration(milliseconds: 400),
@@ -190,8 +257,12 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                           backgroundColor: color,
                           child: Text(cls['time']?.split(':').first ?? '?'),
                         ),
-                        title: Text(cls['subject'] ?? 'Unknown'),
-                        subtitle: Text('Time: ${cls['time']}\nRoom: ${cls['room']}\nTeacher: ${cls['teacher']}'),
+                        title: Text(cls['subject']?.toString() ?? 'Unknown'),
+                        subtitle: Text(
+                            'Time: ${cls['time']}\n'
+                                'Room: ${cls['room']}\n'
+                                'Teacher: ${cls['teacher']}'
+                        ),
                         isThreeLine: true,
                       ),
                     );
