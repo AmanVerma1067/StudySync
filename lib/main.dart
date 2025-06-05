@@ -60,13 +60,7 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
   void setCurrentDay() {
     final now = DateTime.now();
     final weekdays = [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday'
+      'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
     ];
     final todayIndex = now.weekday - 1;
     currentDay = weekdays[todayIndex == 6 ? 0 : todayIndex];
@@ -139,10 +133,7 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
   }
 
   Color getSubjectColor(String subject) {
-    final firstSubject = subject
-        .split(',')
-        .first
-        .trim();
+    final firstSubject = subject.split(',').first.trim();
     final subjectKey = firstSubject.replaceAll(RegExp(r'^[T|L|P]-?'), '');
 
     for (final key in subjectColors.keys) {
@@ -154,12 +145,7 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
   @override
   Widget build(BuildContext context) {
     final days = [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday'
+      'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
     ];
 
     return Scaffold(
@@ -170,14 +156,11 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Left: Sync Button
               IconButton(
                 icon: const Icon(Icons.sync),
                 tooltip: "Sync Timetable",
                 onPressed: loadTimetable,
               ),
-
-              // Center: Title
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -215,11 +198,8 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                       ),
                     ),
                   ],
-
                 ),
               ),
-
-              // Right: Dark Mode Toggle
               IconButton(
                 icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
                 tooltip: "Toggle Theme",
@@ -245,41 +225,15 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : timetable.isEmpty
-          ? const Center(
-          child: Text("No data available. Check internet connection."))
+          ? const Center(child: Text("No data available. Check internet connection."))
           : Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.blueAccent),
-                borderRadius: BorderRadius.circular(10),
-                color: Theme
-                    .of(context)
-                    .cardColor,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: selectedBatch,
-                    items: (timetable['batches']?.keys.toList() ?? [])
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(
-                            value, style: const TextStyle(fontSize: 16)),
-                      );
-                    }).toList(),
-                    onChanged: (String? value) {
-                      setState(() => selectedBatch = value!);
-                    },
-                    isExpanded: true,
-                  ),
-                ),
-              ),
-            ),
+          BatchSelector(
+            timetable: timetable,
+            selectedBatch: selectedBatch,
+            onChanged: (value) {
+              setState(() => selectedBatch = value);
+            },
           ),
           TabBar(
             controller: _tabController,
@@ -299,8 +253,7 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                   itemCount: classes.length,
                   itemBuilder: (context, index) {
                     final cls = classes[index];
-                    final color = getSubjectColor(cls['subject']?.toString() ??
-                        '');
+                    final color = getSubjectColor(cls['subject']?.toString() ?? '');
 
                     return AnimatedContainer(
                       duration: const Duration(milliseconds: 400),
@@ -308,21 +261,16 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                       decoration: BoxDecoration(
                         color: color.withOpacity(0.15),
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(
-                            color: color.withOpacity(0.4), width: 1),
+                        border: Border.all(color: color.withOpacity(0.4), width: 1),
                       ),
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundColor: color,
-                          child: Text(cls['time']
-                              ?.split(':')
-                              .first ?? '?'),
+                          child: Text(cls['time']?.split(':').first ?? '?'),
                         ),
                         title: Text(cls['subject']?.toString() ?? 'Unknown'),
                         subtitle: Text(
-                          'Time: ${cls['time']}\n'
-                              'Room: ${cls['room']}\n'
-                              'Teacher: ${cls['teacher']}',
+                          'Time: ${cls['time']}\nRoom: ${cls['room']}\nTeacher: ${cls['teacher']}',
                         ),
                         isThreeLine: true,
                       ),
@@ -333,6 +281,101 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class BatchSelector extends StatelessWidget {
+  final Map<String, dynamic> timetable;
+  final String selectedBatch;
+  final Function(String) onChanged;
+
+  const BatchSelector({
+    super.key,
+    required this.timetable,
+    required this.selectedBatch,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
+      child: Material(
+        elevation: 2,
+        borderRadius: BorderRadius.circular(12),
+        color: Theme.of(context).cardColor,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).dividerColor.withOpacity(0.6),
+              width: 1.2,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: selectedBatch,
+              isExpanded: true,
+              icon: Icon(
+                Icons.arrow_drop_down_rounded,
+                color: Theme.of(context).iconTheme.color ?? Colors.grey,
+                size: 28,
+              ),
+              dropdownColor: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(12),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontSize: 16,
+                color: Theme.of(context).textTheme.bodyLarge?.color,
+              ),
+              items: (timetable['batches']?.keys.toList() ?? [])
+                  .map<DropdownMenuItem<String>>((String value) {
+                final isSelected = selectedBatch == value;
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Row(
+                    children: [
+                      AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        transitionBuilder: (child, animation) => ScaleTransition(
+                          scale: animation,
+                          child: FadeTransition(opacity: animation, child: child),
+                        ),
+                        child: isSelected
+                            ? Container(
+                          key: ValueKey('selected_$value'),
+                          margin: const EdgeInsets.only(right: 8),
+                          padding: const EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.check,
+                            size: 16,
+                            color: Theme.of(context).colorScheme.onPrimary,
+                          ),
+                        )
+                            : const SizedBox(width: 24),
+                      ),
+                      Text(
+                        value,
+                        style: TextStyle(
+                          fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+              onChanged: (String? value) {
+                if (value != null) onChanged(value);
+              },
+            ),
+          ),
+        ),
       ),
     );
   }
