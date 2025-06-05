@@ -1,5 +1,5 @@
 flutter_native_splash:
-  color: "#2196F3"  # Use your preferred color
+  color: "#2EC4B6"
   image: assets/splash.png  # Path to your splash image
   android: true
   ios: false  # Since you only want Android

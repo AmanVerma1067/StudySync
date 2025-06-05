@@ -59,10 +59,19 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
 
   void setCurrentDay() {
     final now = DateTime.now();
-    final weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    final weekdays = [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ];
     final todayIndex = now.weekday - 1;
     currentDay = weekdays[todayIndex == 6 ? 0 : todayIndex];
-    _tabController = TabController(length: 6, vsync: this, initialIndex: weekdays.indexOf(currentDay));
+    _tabController = TabController(
+        length: 6, vsync: this, initialIndex: weekdays.indexOf(currentDay));
   }
 
   Future<void> loadTimetable() async {
@@ -130,7 +139,10 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
   }
 
   Color getSubjectColor(String subject) {
-    final firstSubject = subject.split(',').first.trim();
+    final firstSubject = subject
+        .split(',')
+        .first
+        .trim();
     final subjectKey = firstSubject.replaceAll(RegExp(r'^[T|L|P]-?'), '');
 
     for (final key in subjectColors.keys) {
@@ -141,50 +153,90 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
 
   @override
   Widget build(BuildContext context) {
-    final days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    final days = [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ];
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight + 10),
         child: AppBar(
           automaticallyImplyLeading: false,
-          title: Stack(
+          title: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Left: Sync Button
-              Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                  icon: const Icon(Icons.sync),
-                  tooltip: "Sync Timetable",
-                  onPressed: loadTimetable,
-                ),
+              IconButton(
+                icon: const Icon(Icons.sync),
+                tooltip: "Sync Timetable",
+                onPressed: loadTimetable,
               ),
+
               // Center: Title
-              const Align(
-                alignment: Alignment.center,
-                child: Text('📘 StudySync - Timetable'),
-              ),
-              // Right: Dark Mode Toggle
-              Align(
-                alignment: Alignment.centerRight,
-                child: IconButton(
-                  icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
-                  tooltip: "Toggle Theme",
-                  onPressed: () {
-                    setState(() {
-                      isDarkMode = !isDarkMode;
-                    });
-                    final mode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
-                    runApp(MaterialApp(
-                      title: 'StudySync',
-                      debugShowCheckedModeBanner: false,
-                      theme: ThemeData.light(useMaterial3: true),
-                      darkTheme: ThemeData.dark(useMaterial3: true),
-                      themeMode: mode,
-                      home: const TimetableScreen(),
-                    ));
-                  },
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: '📚 Study',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.red,
+                            ),
+                          ),
+                          TextSpan(
+                            text: 'Sync',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    const Text(
+                      'Timetable • by Aman Verma',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ],
+
                 ),
+              ),
+
+              // Right: Dark Mode Toggle
+              IconButton(
+                icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
+                tooltip: "Toggle Theme",
+                onPressed: () {
+                  setState(() {
+                    isDarkMode = !isDarkMode;
+                  });
+                  final mode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
+                  runApp(MaterialApp(
+                    title: 'StudySync',
+                    debugShowCheckedModeBanner: false,
+                    theme: ThemeData.light(useMaterial3: true),
+                    darkTheme: ThemeData.dark(useMaterial3: true),
+                    themeMode: mode,
+                    home: const TimetableScreen(),
+                  ));
+                },
               ),
             ],
           ),
@@ -193,7 +245,8 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : timetable.isEmpty
-          ? const Center(child: Text("No data available. Check internet connection."))
+          ? const Center(
+          child: Text("No data available. Check internet connection."))
           : Column(
         children: [
           Padding(
@@ -202,17 +255,21 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.blueAccent),
                 borderRadius: BorderRadius.circular(10),
-                color: Theme.of(context).cardColor,
+                color: Theme
+                    .of(context)
+                    .cardColor,
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
                     value: selectedBatch,
-                    items: (timetable['batches']?.keys.toList() ?? []).map<DropdownMenuItem<String>>((String value) {
+                    items: (timetable['batches']?.keys.toList() ?? [])
+                        .map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value, style: const TextStyle(fontSize: 16)),
+                        child: Text(
+                            value, style: const TextStyle(fontSize: 16)),
                       );
                     }).toList(),
                     onChanged: (String? value) {
@@ -242,7 +299,8 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                   itemCount: classes.length,
                   itemBuilder: (context, index) {
                     final cls = classes[index];
-                    final color = getSubjectColor(cls['subject']?.toString() ?? '');
+                    final color = getSubjectColor(cls['subject']?.toString() ??
+                        '');
 
                     return AnimatedContainer(
                       duration: const Duration(milliseconds: 400),
@@ -250,18 +308,21 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                       decoration: BoxDecoration(
                         color: color.withOpacity(0.15),
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(color: color.withOpacity(0.4), width: 1),
+                        border: Border.all(
+                            color: color.withOpacity(0.4), width: 1),
                       ),
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundColor: color,
-                          child: Text(cls['time']?.split(':').first ?? '?'),
+                          child: Text(cls['time']
+                              ?.split(':')
+                              .first ?? '?'),
                         ),
                         title: Text(cls['subject']?.toString() ?? 'Unknown'),
                         subtitle: Text(
-                            'Time: ${cls['time']}\n'
-                                'Room: ${cls['room']}\n'
-                                'Teacher: ${cls['teacher']}'
+                          'Time: ${cls['time']}\n'
+                              'Room: ${cls['room']}\n'
+                              'Teacher: ${cls['teacher']}',
                         ),
                         isThreeLine: true,
                       ),
