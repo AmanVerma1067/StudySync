@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+// import 'package:flutter/services.dart' show rootBundle;
 
 void main() {
   runApp(const StudySyncApp());
@@ -43,18 +45,19 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
     'DSP': Colors.purpleAccent,
     'AE': Colors.teal,
     'ML': Colors.orange,
-    'UHV': Colors.indigoAccent,
+    'UHV': Colors.cyan,
     'IE': Colors.green,
     'FA': Colors.redAccent,
     'Litr': Colors.cyanAccent,
-    'Psycho': Colors.brown,
+    'Psycho': Colors.amber,
   };
 
   @override
   void initState() {
     super.initState();
     setCurrentDay();
-    loadTimetable();
+    // loadLocalTimetable(); // 🔁 FORCED LOCAL LOAD
+    loadTimetable(); // 🔒 Commented for now
   }
 
   void setCurrentDay() {
@@ -67,6 +70,39 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
     _tabController = TabController(
         length: 6, vsync: this, initialIndex: weekdays.indexOf(currentDay));
   }
+
+  String _formatTime(String time) {
+    try {
+      // Remove any trailing - or spaces and split by colon
+      final cleanedTime = time.replaceAll(RegExp(r'[^\d:]'), '');
+      final parts = cleanedTime.split(':');
+      if (parts.length != 2) return time; // Return as-is if format is invalid
+
+      final hour = int.parse(parts[0]);
+      final minute = parts[1];
+
+      // Determine AM/PM based on your requirements
+      final period = (hour >= 8 && hour < 12) ? 'AM' : 'PM';
+      final displayHour = hour > 12 ? hour - 12 : hour;
+
+      // Format as "H AM/PM" (since you mentioned no minutes like 9:30)
+      return '$displayHour $period';
+    } catch (e) {
+      return time; // Return original if parsing fails
+    }
+  }
+
+  // // To load local tt for testing
+  // Future<void> loadLocalTimetable() async {
+  //   try {
+  //     final jsonStr = await rootBundle.loadString('assets/timetable.json');
+  //     final List<dynamic> data = json.decode(jsonStr);
+  //     await cacheTimetable(jsonStr); // So future runs can use this
+  //     applyTimetable(data);
+  //   } catch (e) {
+  //     debugPrint("Failed to load local timetable: $e");
+  //   }
+  // }
 
   Future<void> loadTimetable() async {
     setState(() => isLoading = true);
@@ -87,8 +123,10 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
         await loadCachedTimetable();
       }
     } catch (_) {
+      // Try local asset fallback
       await loadCachedTimetable();
     }
+    // await loadLocalTimetable(); // 👈 fallback for now
     setState(() => isLoading = false);
   }
 
@@ -248,34 +286,72 @@ class _TimetableScreenState extends State<TimetableScreen> with SingleTickerProv
                 if (classes.isEmpty) {
                   return const Center(child: Text("No classes today!"));
                 }
-                return ListView.builder(
-                  padding: const EdgeInsets.all(10),
-                  itemCount: classes.length,
-                  itemBuilder: (context, index) {
-                    final cls = classes[index];
-                    final color = getSubjectColor(cls['subject']?.toString() ?? '');
+                return LiquidPullToRefresh(
+                  onRefresh: loadTimetable,
+                  color: Colors.deepPurpleAccent,
+                  height: 120,
+                  backgroundColor: Colors.white,
+                  animSpeedFactor: 1.2,
+                  showChildOpacityTransition: false,
+                  springAnimationDurationInMilliseconds: 700,
 
-                    return AnimatedContainer(
-                      duration: const Duration(milliseconds: 400),
-                      margin: const EdgeInsets.symmetric(vertical: 6),
-                      decoration: BoxDecoration(
-                        color: color.withOpacity(0.15),
-                        borderRadius: BorderRadius.circular(14),
-                        border: Border.all(color: color.withOpacity(0.4), width: 1),
-                      ),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: color,
-                          child: Text(cls['time']?.split(':').first ?? '?'),
+                  child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    itemCount: classes.length,
+                    itemBuilder: (context, index) {
+                      final cls = classes[index];
+                      final color = getSubjectColor(cls['subject']?.toString() ?? '');
+
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 400),
+                        margin: const EdgeInsets.symmetric(vertical: 3),
+                        decoration: BoxDecoration(
+                          color: color.withOpacity(0.55),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: color.withOpacity(0.55), width: 1.3),
+                          gradient: LinearGradient(
+                            colors: [color.withOpacity(0.55), color.withOpacity(0.15)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                         ),
-                        title: Text(cls['subject']?.toString() ?? 'Unknown'),
-                        subtitle: Text(
-                          'Time: ${cls['time']}\nRoom: ${cls['room']}\nTeacher: ${cls['teacher']}',
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                          leading: CircleAvatar(
+                            backgroundColor: color.withOpacity(0.85),
+                            radius: 40,
+                            child: Text(
+                              _formatTime(cls['time']?.split('-').first.trim() ?? '?'),
+                              style: TextStyle(
+                                color: Colors.yellow[200],
+                                fontWeight: FontWeight.w800,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                          title: Text(
+                            cls['subject']?.toString() ?? 'Unknown',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.blue[500],
+                              fontSize: 17,
+                            ),
+                          ),
+                          subtitle: Padding(
+                            padding: const EdgeInsets.only(top: 2.0),
+                            child: Text(
+                              '🕒 ${cls['time']}\n📍 Room ${cls['room']}\n👨‍🏫 ${cls['teacher']}',
+                              style: TextStyle(
+                                height: 1.2,
+                                fontSize: 14.5,
+                              ),
+                            ),
+                          ),
+                          isThreeLine: true, // ✅ Now at the correct place
                         ),
-                        isThreeLine: true,
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 );
               }).toList(),
             ),
