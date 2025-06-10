@@ -9,7 +9,7 @@ A beautiful Flutter timetable application that helps students track their class 
 ## Features ✨
 
 - 🗓️ Weekly timetable view with tab navigation
-- 🔄 Click-to-refresh functionality
+- 🔄 Liquid pull-to-refresh functionality
 - 🌙 Dark/Light mode toggle
 - 📱 Offline support with cached data
 - 🎨 Color-coded subjects for quick identification
