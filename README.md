@@ -22,7 +22,7 @@ A beautiful Flutter timetable and academic calendar application that helps stude
 
 | Light Mode                                                                                                      | Dark Mode                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| <img src="assets/light.jpeg" alt="Light Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/dark.jpeg" alt="Dark Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> |
+| <img src="assets/lightv2.jpeg" alt="Light Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/dark.png" alt="Dark Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> |
 
 ## Installation ⚙️
 
