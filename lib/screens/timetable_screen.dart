@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'calendar_screen.dart';
 
 class TimetableScreen extends StatefulWidget {
   const TimetableScreen({super.key});
@@ -223,7 +224,8 @@ class _TimetableScreenState extends State<TimetableScreen>
                 Text(
                   'Study',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 25,
+                    letterSpacing: 0.8,
                     fontWeight: FontWeight.bold,
                     color: Colors.red,
                   ),
@@ -231,7 +233,8 @@ class _TimetableScreenState extends State<TimetableScreen>
                 Text(
                   'Sync',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 25,
+                    letterSpacing: 0.8,
                     fontWeight: FontWeight.bold,
                     color: Colors.blue,
                   ),
@@ -254,7 +257,7 @@ class _TimetableScreenState extends State<TimetableScreen>
         actions: [
           IconButton(
             icon: Text(
-              showingTimetable ? '📅' : '⏱️',
+              showingTimetable ? '📅' : '⏰',
               style: const TextStyle(fontSize: 24),
             ),
             tooltip: showingTimetable ? 'Show Calendar' : 'Show Timetable',
@@ -280,7 +283,7 @@ class _TimetableScreenState extends State<TimetableScreen>
       ),
       body: showingTimetable
           ? _buildTimetableBody(days)
-          : _buildCalendarPlaceholder(), // Calendar placeholder
+          : const CalendarScreen(), // Calendar placeholder
     );
   }
 // NEW: Extracted timetable body
@@ -383,35 +386,6 @@ class _TimetableScreenState extends State<TimetableScreen>
           ),
         ),
       ],
-    );
-  }
-  // NEW: Placeholder for calendar
-  Widget _buildCalendarPlaceholder() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.calendar_today, size: 80, color: Colors.blue[200]),
-          const SizedBox(height: 20),
-          Text(
-            'Academic Calendar',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue[700],
-            ),
-          ),
-          const SizedBox(height: 10),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            child: Text(
-              'Coming soon! Academic events and schedules will appear here',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
