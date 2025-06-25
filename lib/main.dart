@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-// import 'package:flutter/services.dart' show rootBundle;
+
+import 'screens/timetable_screen.dart';
+import 'screens/calendar_screen.dart';  // ← your new academic calendar screen
 
 void main() {
   runApp(const StudySyncApp());

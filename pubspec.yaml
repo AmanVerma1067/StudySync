@@ -30,6 +30,7 @@ flutter:
   assets:
     - assets/splash.png
     - assets/timetable.json
+    - assets/calendar.json
 
 
   uses-material-design: true
