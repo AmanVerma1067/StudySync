@@ -152,14 +152,39 @@ class _TimetableScreenState extends State<TimetableScreen>
     setState(() => isLoading = false);
   }
 
+  // void applyTimetable(List<dynamic> apiData) {
+  //   final Map<String, dynamic> batchesMap = {};
+  //
+  //   for (var batchData in apiData) {
+  //     final batchName = batchData['batch'] as String;
+  //     final batchTimetable = Map<String, dynamic>.from(batchData);
+  //     batchTimetable.remove('batch');
+  //     batchesMap[batchName] = batchTimetable;
+  //   }
+  //
+  //   setState(() {
+  //     timetable = {'batches': batchesMap};
+  //     selectedBatch = batchesMap.keys.isNotEmpty ? batchesMap.keys.first : '';
+  //   });
+  // }
+
   void applyTimetable(List<dynamic> apiData) {
     final Map<String, dynamic> batchesMap = {};
 
-    for (var batchData in apiData) {
-      final batchName = batchData['batch'] as String;
-      final batchTimetable = Map<String, dynamic>.from(batchData);
-      batchTimetable.remove('batch');
-      batchesMap[batchName] = batchTimetable;
+    // Check if there's at least one element
+    if (apiData.isNotEmpty) {
+      // Get the first (and only) element which contains batch objects
+      final batchesContainer = apiData[0] as Map<String, dynamic>;
+
+      batchesContainer.forEach((key, batchData) {
+        final batchName = batchData['batch'] as String?;
+        if (batchName != null) {
+          // Create a copy of the batch data without the 'batch' key
+          final batchTimetable = Map<String, dynamic>.from(batchData);
+          batchTimetable.remove('batch');
+          batchesMap[batchName] = batchTimetable;
+        }
+      });
     }
 
     setState(() {
@@ -222,7 +247,7 @@ class _TimetableScreenState extends State<TimetableScreen>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Study',
+                  '📚 Study',
                   style: TextStyle(
                     fontSize: 25,
                     letterSpacing: 0.8,
@@ -243,7 +268,7 @@ class _TimetableScreenState extends State<TimetableScreen>
             ),
             const SizedBox(height: 2),
             Text(
-              '~ By Aman Verma',
+              '~ Made with 💙 by Aman Verma',
               style: TextStyle(
                 fontSize: 12,
                 fontStyle: FontStyle.italic,

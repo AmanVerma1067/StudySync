@@ -1,610 +1,850 @@
 [
-  {
-    "0": {
-      "batch": "E16",
-      "Monday": [
-        {
-          "time": "9:00-10:50",
-          "subject": "P-ADC",
-          "room": "133",
-          "teacher": "Ajit Kumar"
+    {
+        "0": {
+            "batch": "E16",
+            "Monday": [
+                {
+                    "time": "9:00-10:50",
+                    "subject": "P-ADC",
+                    "room": "133",
+                    "teacher": "Ajit Kumar"
+                },
+                {
+                    "time": "11:00-11:50",
+                    "subject": "FA, Litr,Psycho, IE, Litr",
+                    "room": "148, 153, , 117, 244B",
+                    "teacher": "SV, PS, Shweta, AA, ES"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DSP",
+                    "room": "228",
+                    "teacher": "SVS"
+                },
+                {
+                    "time": "3:00-4:50",
+                    "subject": "P-ML",
+                    "room": "142",
+                    "teacher": "ANKUR GUPTA"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "9:00-10:50",
+                    "subject": "P-AE",
+                    "room": "224/142",
+                    "teacher": "Tikkiwal"
+                },
+                {
+                    "time": "11:00-11:50",
+                    "subject": "L-ADC",
+                    "room": "244B",
+                    "teacher": "RKS"
+                },
+                {
+                    "time": "12:00-12:50",
+                    "subject": "T-UHV",
+                    "room": "126",
+                    "teacher": "Sakshi Varshney"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "T-DSP",
+                    "room": "116",
+                    "teacher": "KD Tyagi"
+                },
+                {
+                    "time": "3:00-3:50",
+                    "subject": "L-ML",
+                    "room": "CR53",
+                    "teacher": "Parul Arora"
+                },
+                {
+                    "time": "4:00-4:50",
+                    "subject": "T-AE",
+                    "room": "116",
+                    "teacher": "BR. Chaturvedi"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "10:00-11:50",
+                    "subject": "P-ML",
+                    "room": "134",
+                    "teacher": "ANKUR GUPTA"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "FA, Litr, IE, Litr",
+                    "room": "148, 153, 117, 244B",
+                    "teacher": "SV, PS, AA, ES"
+                },
+                {
+                    "time": "3:00-3:50",
+                    "subject": "L-ADC",
+                    "room": "CR54",
+                    "teacher": "RKS"
+                },
+                {
+                    "time": "4:00-4:50",
+                    "subject": "L-UHV",
+                    "room": "217",
+                    "teacher": "Priyanka Kwatra"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-AE",
+                    "room": "244B",
+                    "teacher": "BR. Chaturvedi"
+                },
+                {
+                    "time": "11:00-11:50",
+                    "subject": "L-UHV",
+                    "room": "244B",
+                    "teacher": "Priyanka Kwatra"
+                },
+                {
+                    "time": "12:00-12:50",
+                    "subject": "L-ADC",
+                    "room": "244B",
+                    "teacher": "RKS"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DSP",
+                    "room": "CR53",
+                    "teacher": "SVS"
+                },
+                {
+                    "time": "3:00-3:50",
+                    "subject": "T-FA,T-Litr, T-IE",
+                    "room": "127, 121, 126",
+                    "teacher": "SV, PS, AA"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "T-ADC",
+                    "room": "116",
+                    "teacher": "RKS"
+                },
+                {
+                    "time": "11:00-11:50",
+                    "subject": "L-AE",
+                    "room": "CR53",
+                    "teacher": "BR. Chaturvedi"
+                },
+                {
+                    "time": "12:00-12:50",
+                    "subject": "L-ML",
+                    "room": "CR53",
+                    "teacher": "Parul Arora"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DSP",
+                    "room": "CR53",
+                    "teacher": "SVS"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-ML",
+                    "room": "CR53",
+                    "teacher": "Parul Arora"
+                },
+                {
+                    "time": "10:00-10:50",
+                    "subject": "L-AE",
+                    "room": "CR53",
+                    "teacher": "BR. Chaturvedi"
+                },
+                {
+                    "time": "11:00-12:50",
+                    "subject": "P-DSP",
+                    "room": "134",
+                    "teacher": "SVS"
+                }
+            ]
         },
-        {
-          "time": "11:00-11:50",
-          "subject": "FA, Litr,Psycho, IE, Litr",
-          "room": "148, 153, , 117, 244B",
-          "teacher": "SV, PS, Shweta, AA, ES"
+        "1": {
+            "batch": "E15",
+            "Monday": [
+                {
+                    "time": "9:00-09:50",
+                    "subject": "T-AE",
+                    "room": "116",
+                    "teacher": "NY"
+                },
+                {
+                    "time": "10:00-10:50",
+                    "subject": "T-DSP",
+                    "room": "121",
+                    "teacher": "KD Tyagi"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DSP",
+                    "room": "228",
+                    "teacher": "SVS"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "9:00-10:50",
+                    "subject": "P-DSP",
+                    "room": "134",
+                    "teacher": "B Suresh"
+                },
+                {
+                    "time": "11:00-11:50",
+                    "subject": "L-ADC",
+                    "room": "244B",
+                    "teacher": "RKS"
+                },
+                {
+                    "time": "3:00-3:50",
+                    "subject": "L-ML",
+                    "room": "CR53",
+                    "teacher": "Parul Arora"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-DSP",
+                    "room": "DW04",
+                    "teacher": "SVS"
+                },
+                {
+                    "time": "10:00-11:50",
+                    "subject": "P-ML",
+                    "room": "133",
+                    "teacher": "AJIT KUMAR"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "FA, Litr, IE, Litr",
+                    "room": "148, 153, 117, 244B",
+                    "teacher": "SV, PS, AA, ES"
+                },
+                {
+                    "time": "3:00-3:50",
+                    "subject": "L-ADC",
+                    "room": "CR54",
+                    "teacher": "RKS"
+                },
+                {
+                    "time": "4:00-4:50",
+                    "subject": "L-UHV",
+                    "room": "217",
+                    "teacher": "Priyanka Kwatra"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-AE",
+                    "room": "244B",
+                    "teacher": "BR. Chaturvedi"
+                },
+                {
+                    "time": "11:00-11:50",
+                    "subject": "L-UHV",
+                    "room": "244B",
+                    "teacher": "Priyanka Kwatra"
+                },
+                {
+                    "time": "12:00-12:50",
+                    "subject": "L-ADC",
+                    "room": "244B",
+                    "teacher": "RKS"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DSP",
+                    "room": "CR53",
+                    "teacher": "SVS"
+                },
+                {
+                    "time": "3:00-3:50",
+                    "subject": "T-FA, T-Litr, T-IE",
+                    "room": "127, 121, 126",
+                    "teacher": "SV, PS, AA"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "9:00-10:50",
+                    "subject": "P-AE",
+                    "room": "224/142",
+                    "teacher": "Tikkiwal"
+                },
+                {
+                    "time": "11:00-11:50",
+                    "subject": "L-AE",
+                    "room": "CR53",
+                    "teacher": "BR. Chaturvedi"
+                },
+                {
+                    "time": "12:00-12:50",
+                    "subject": "L-ML",
+                    "room": "CR53",
+                    "teacher": "Parul Arora"
+                },
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DSP",
+                    "room": "CR53",
+                    "teacher": "SVS"
+                },
+                {
+                    "time": "3:00-4:50",
+                    "subject": "P-ML",
+                    "room": "142",
+                    "teacher": "ANKUR GUPTA"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-ML",
+                    "room": "CR53",
+                    "teacher": "Parul Arora"
+                },
+                {
+                    "time": "10:00-10:50",
+                    "subject": "L-AE",
+                    "room": "CR53",
+                    "teacher": "BR. Chaturvedi"
+                },
+                {
+                    "time": "11:00-12:50",
+                    "subject": "P-ML",
+                    "room": "142",
+                    "teacher": "ANKUR GUPTA"
+                }
+            ]
         },
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DSP",
-          "room": "228",
-          "teacher": "SVS"
+        "2": {
+            "batch": "F1",
+            "Monday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-CN",
+                    "room": "CR01",
+                    "teacher": "Prof. Sharma"
+                },
+                {
+                    "time": "10:00-10:50",
+                    "subject": "T-OOPS",
+                    "room": "CR02",
+                    "teacher": "Neha Gupta"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "11:00-12:50",
+                    "subject": "P-OOPS",
+                    "room": "134",
+                    "teacher": "Varun Khanna"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-CN",
+                    "room": "CR01",
+                    "teacher": "Prof. Sharma"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "3:00-4:50",
-          "subject": "P-ML",
-          "room": "142",
-          "teacher": "ANKUR GUPTA"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "9:00-10:50",
-          "subject": "P-AE",
-          "room": "224/142",
-          "teacher": "Tikkiwal"
+        "3": {
+            "batch": "F2",
+            "Monday": [
+                {
+                    "time": "9:00-10:50",
+                    "subject": "P-DBMS",
+                    "room": "Lab-5",
+                    "teacher": "Dr. Mehta"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "L-SE",
+                    "room": "CR04",
+                    "teacher": "Sneha Bansal"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "12:00-12:50",
+                    "subject": "L-DBMS",
+                    "room": "CR03",
+                    "teacher": "Dr. Mehta"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "11:00-11:50",
-          "subject": "L-ADC",
-          "room": "244B",
-          "teacher": "RKS"
+        "4": {
+            "batch": "F3",
+            "Monday": [
+                {
+                    "time": "11:00-11:50",
+                    "subject": "L-DSA",
+                    "room": "CR06",
+                    "teacher": "Anjali Singh"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-CN",
+                    "room": "CR07",
+                    "teacher": "Ravi Kumar"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "T-SE",
+                    "room": "CR08",
+                    "teacher": "Sneha Bansal"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "11:00-11:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "11:00-11:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "11:00-11:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "12:00-12:50",
-          "subject": "T-UHV",
-          "room": "126",
-          "teacher": "Sakshi Varshney"
+        "5": {
+            "batch": "F4",
+            "Monday": [
+                {
+                    "time": "10:00-11:50",
+                    "subject": "P-SE",
+                    "room": "Lab-2",
+                    "teacher": "Sneha Bansal"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "3:00-3:50",
+                    "subject": "L-DSA",
+                    "room": "CR06",
+                    "teacher": "Anjali Singh"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DBMS",
+                    "room": "CR03",
+                    "teacher": "Dr. Mehta"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "12:00-12:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "12:00-12:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "12:00-12:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "2:00-2:50",
-          "subject": "T-DSP",
-          "room": "116",
-          "teacher": "KD Tyagi"
+        "6": {
+            "batch": "F5",
+            "Monday": [
+                {
+                    "time": "9:00-10:50",
+                    "subject": "P-CN",
+                    "room": "Lab-4",
+                    "teacher": "Prof. Sharma"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "1:00-1:50",
+                    "subject": "T-OOPS",
+                    "room": "CR02",
+                    "teacher": "Neha Gupta"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "3:00-4:50",
+                    "subject": "P-DBMS",
+                    "room": "134",
+                    "teacher": "Dr. Mehta"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "1:00-1:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "1:00-1:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "1:00-1:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "3:00-3:50",
-          "subject": "L-ML",
-          "room": "CR53",
-          "teacher": "Parul Arora"
+        "7": {
+            "batch": "F6",
+            "Monday": [
+                {
+                    "time": "12:00-12:50",
+                    "subject": "L-SE",
+                    "room": "CR04",
+                    "teacher": "Sneha Bansal"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "L-DSA",
+                    "room": "CR06",
+                    "teacher": "Anjali Singh"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "10:00-11:50",
+                    "subject": "P-OOPS",
+                    "room": "Lab-3",
+                    "teacher": "Varun Khanna"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "4:00-4:50",
-          "subject": "T-AE",
-          "room": "116",
-          "teacher": "BR. Chaturvedi"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "10:00-11:50",
-          "subject": "P-ML",
-          "room": "134",
-          "teacher": "ANKUR GUPTA"
+        "8": {
+            "batch": "F7",
+            "Monday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-DBMS",
+                    "room": "CR03",
+                    "teacher": "Dr. Mehta"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "11:00-11:50",
+                    "subject": "T-DSA",
+                    "room": "CR06",
+                    "teacher": "Anjali Singh"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "3:00-3:50",
+                    "subject": "L-CN",
+                    "room": "CR01",
+                    "teacher": "Prof. Sharma"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "3:00-3:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "3:00-3:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "3:00-3:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "2:00-2:50",
-          "subject": "FA, Litr, IE, Litr",
-          "room": "148, 153, 117, 244B",
-          "teacher": "SV, PS, AA, ES"
+        "9": {
+            "batch": "F8",
+            "Monday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "L-OOPS",
+                    "room": "CR02",
+                    "teacher": "Neha Gupta"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-SE",
+                    "room": "CR04",
+                    "teacher": "Sneha Bansal"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "11:00-12:50",
+                    "subject": "P-CN",
+                    "room": "Lab-4",
+                    "teacher": "Prof. Sharma"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "4:00-4:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "4:00-4:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "4:00-4:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "3:00-3:50",
-          "subject": "L-ADC",
-          "room": "CR54",
-          "teacher": "RKS"
+        "10": {
+            "batch": "F9",
+            "Monday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "T-DBMS",
+                    "room": "CR03",
+                    "teacher": "Dr. Mehta"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "1:00-1:50",
+                    "subject": "T-CN",
+                    "room": "CR01",
+                    "teacher": "Prof. Sharma"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "2:00-2:50",
+                    "subject": "L-SE",
+                    "room": "CR04",
+                    "teacher": "Sneha Bansal"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "9:00-9:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         },
-        {
-          "time": "4:00-4:50",
-          "subject": "L-UHV",
-          "room": "217",
-          "teacher": "Priyanka Kwatra"
+        "11": {
+            "batch": "F10",
+            "Monday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "L-OOPS",
+                    "room": "CR02",
+                    "teacher": "Neha Gupta"
+                }
+            ],
+            "Tuesday": [
+                {
+                    "time": "9:00-10:50",
+                    "subject": "P-SE",
+                    "room": "Lab-2",
+                    "teacher": "Sneha Bansal"
+                }
+            ],
+            "Wednesday": [
+                {
+                    "time": "1:00-1:50",
+                    "subject": "T-DSA",
+                    "room": "CR06",
+                    "teacher": "Anjali Singh"
+                }
+            ],
+            "Thursday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Friday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ],
+            "Saturday": [
+                {
+                    "time": "10:00-10:50",
+                    "subject": "No Class",
+                    "room": "-",
+                    "teacher": "-"
+                }
+            ]
         }
-      ],
-      "Thursday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-AE",
-          "room": "244B",
-          "teacher": "BR. Chaturvedi"
-        },
-        {
-          "time": "11:00-11:50",
-          "subject": "L-UHV",
-          "room": "244B",
-          "teacher": "Priyanka Kwatra"
-        },
-        {
-          "time": "12:00-12:50",
-          "subject": "L-ADC",
-          "room": "244B",
-          "teacher": "RKS"
-        },
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DSP",
-          "room": "CR53",
-          "teacher": "SVS"
-        },
-        {
-          "time": "3:00-3:50",
-          "subject": "T-FA,T-Litr, T-IE",
-          "room": "127, 121, 126",
-          "teacher": "SV, PS, AA"
-        }
-      ],
-      "Friday": [
-        {
-          "time": "10:00-10:50",
-          "subject": "T-ADC",
-          "room": "116",
-          "teacher": "RKS"
-        },
-        {
-          "time": "11:00-11:50",
-          "subject": "L-AE",
-          "room": "CR53",
-          "teacher": "BR. Chaturvedi"
-        },
-        {
-          "time": "12:00-12:50",
-          "subject": "L-ML",
-          "room": "CR53",
-          "teacher": "Parul Arora"
-        },
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DSP",
-          "room": "CR53",
-          "teacher": "SVS"
-        }
-      ],
-      "Saturday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-ML",
-          "room": "CR53",
-          "teacher": "Parul Arora"
-        },
-        {
-          "time": "10:00-10:50",
-          "subject": "L-AE",
-          "room": "CR53",
-          "teacher": "BR. Chaturvedi"
-        },
-        {
-          "time": "11:00-12:50",
-          "subject": "P-DSP",
-          "room": "134",
-          "teacher": "SVS"
-        }
-      ]
-    },
-    "1": {
-      "batch": "E15",
-      "Monday": [
-        {
-          "time": "9:00-09:50",
-          "subject": "T-AE",
-          "room": "116",
-          "teacher": "NY"
-        },
-        {
-          "time": "10:00-10:50",
-          "subject": "T-DSP",
-          "room": "121",
-          "teacher": "KD Tyagi"
-        },
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DSP",
-          "room": "228",
-          "teacher": "SVS"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "9:00-10:50",
-          "subject": "P-DSP",
-          "room": "134",
-          "teacher": "B Suresh"
-        },
-        {
-          "time": "11:00-11:50",
-          "subject": "L-ADC",
-          "room": "244B",
-          "teacher": "RKS"
-        },
-        {
-          "time": "3:00-3:50",
-          "subject": "L-ML",
-          "room": "CR53",
-          "teacher": "Parul Arora"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-DSP",
-          "room": "DW04",
-          "teacher": "SVS"
-        },
-        {
-          "time": "10:00-11:50",
-          "subject": "P-ML",
-          "room": "133",
-          "teacher": "AJIT KUMAR"
-        },
-        {
-          "time": "2:00-2:50",
-          "subject": "FA, Litr, IE, Litr",
-          "room": "148, 153, 117, 244B",
-          "teacher": "SV, PS, AA, ES"
-        },
-        {
-          "time": "3:00-3:50",
-          "subject": "L-ADC",
-          "room": "CR54",
-          "teacher": "RKS"
-        },
-        {
-          "time": "4:00-4:50",
-          "subject": "L-UHV",
-          "room": "217",
-          "teacher": "Priyanka Kwatra"
-        }
-      ],
-      "Thursday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-AE",
-          "room": "244B",
-          "teacher": "BR. Chaturvedi"
-        },
-        {
-          "time": "11:00-11:50",
-          "subject": "L-UHV",
-          "room": "244B",
-          "teacher": "Priyanka Kwatra"
-        },
-        {
-          "time": "12:00-12:50",
-          "subject": "L-ADC",
-          "room": "244B",
-          "teacher": "RKS"
-        },
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DSP",
-          "room": "CR53",
-          "teacher": "SVS"
-        },
-        {
-          "time": "3:00-3:50",
-          "subject": "T-FA, T-Litr, T-IE",
-          "room": "127, 121, 126",
-          "teacher": "SV, PS, AA"
-        }
-      ],
-      "Friday": [
-        {
-          "time": "9:00-10:50",
-          "subject": "P-AE",
-          "room": "224/142",
-          "teacher": "Tikkiwal"
-        },
-        {
-          "time": "11:00-11:50",
-          "subject": "L-AE",
-          "room": "CR53",
-          "teacher": "BR. Chaturvedi"
-        },
-        {
-          "time": "12:00-12:50",
-          "subject": "L-ML",
-          "room": "CR53",
-          "teacher": "Parul Arora"
-        },
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DSP",
-          "room": "CR53",
-          "teacher": "SVS"
-        },
-        {
-          "time": "3:00-4:50",
-          "subject": "P-ML",
-          "room": "142",
-          "teacher": "ANKUR GUPTA"
-        }
-      ],
-      "Saturday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-ML",
-          "room": "CR53",
-          "teacher": "Parul Arora"
-        },
-        {
-          "time": "10:00-10:50",
-          "subject": "L-AE",
-          "room": "CR53",
-          "teacher": "BR. Chaturvedi"
-        },
-        {
-          "time": "11:00-12:50",
-          "subject": "P-ML",
-          "room": "142",
-          "teacher": "ANKUR GUPTA"
-        }
-      ]
-    },
-    "2": {
-      "batch": "F1",
-      "Monday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-CN",
-          "room": "CR01",
-          "teacher": "Prof. Sharma"
-        },
-        {
-          "time": "10:00-10:50",
-          "subject": "T-OOPS",
-          "room": "CR02",
-          "teacher": "Neha Gupta"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "11:00-12:50",
-          "subject": "P-OOPS",
-          "room": "134",
-          "teacher": "Varun Khanna"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-CN",
-          "room": "CR01",
-          "teacher": "Prof. Sharma"
-        }
-      ]
-    },
-    "3": {
-      "batch": "F2",
-      "Monday": [
-        {
-          "time": "9:00-10:50",
-          "subject": "P-DBMS",
-          "room": "Lab-5",
-          "teacher": "Dr. Mehta"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "10:00-10:50",
-          "subject": "L-SE",
-          "room": "CR04",
-          "teacher": "Sneha Bansal"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "12:00-12:50",
-          "subject": "L-DBMS",
-          "room": "CR03",
-          "teacher": "Dr. Mehta"
-        }
-      ]
-    },
-    "4": {
-      "batch": "F3",
-      "Monday": [
-        {
-          "time": "11:00-11:50",
-          "subject": "L-DSA",
-          "room": "CR06",
-          "teacher": "Anjali Singh"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "2:00-2:50",
-          "subject": "L-CN",
-          "room": "CR07",
-          "teacher": "Ravi Kumar"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "T-SE",
-          "room": "CR08",
-          "teacher": "Sneha Bansal"
-        }
-      ]
-    },
-    "5": {
-      "batch": "F4",
-      "Monday": [
-        {
-          "time": "10:00-11:50",
-          "subject": "P-SE",
-          "room": "Lab-2",
-          "teacher": "Sneha Bansal"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "3:00-3:50",
-          "subject": "L-DSA",
-          "room": "CR06",
-          "teacher": "Anjali Singh"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DBMS",
-          "room": "CR03",
-          "teacher": "Dr. Mehta"
-        }
-      ]
-    },
-    "6": {
-      "batch": "F5",
-      "Monday": [
-        {
-          "time": "9:00-10:50",
-          "subject": "P-CN",
-          "room": "Lab-4",
-          "teacher": "Prof. Sharma"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "1:00-1:50",
-          "subject": "T-OOPS",
-          "room": "CR02",
-          "teacher": "Neha Gupta"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "3:00-4:50",
-          "subject": "P-DBMS",
-          "room": "134",
-          "teacher": "Dr. Mehta"
-        }
-      ]
-    },
-    "7": {
-      "batch": "F6",
-      "Monday": [
-        {
-          "time": "12:00-12:50",
-          "subject": "L-SE",
-          "room": "CR04",
-          "teacher": "Sneha Bansal"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "L-DSA",
-          "room": "CR06",
-          "teacher": "Anjali Singh"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "10:00-11:50",
-          "subject": "P-OOPS",
-          "room": "Lab-3",
-          "teacher": "Varun Khanna"
-        }
-      ]
-    },
-    "8": {
-      "batch": "F7",
-      "Monday": [
-        {
-          "time": "2:00-2:50",
-          "subject": "L-DBMS",
-          "room": "CR03",
-          "teacher": "Dr. Mehta"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "11:00-11:50",
-          "subject": "T-DSA",
-          "room": "CR06",
-          "teacher": "Anjali Singh"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "3:00-3:50",
-          "subject": "L-CN",
-          "room": "CR01",
-          "teacher": "Prof. Sharma"
-        }
-      ]
-    },
-    "9": {
-      "batch": "F8",
-      "Monday": [
-        {
-          "time": "10:00-10:50",
-          "subject": "L-OOPS",
-          "room": "CR02",
-          "teacher": "Neha Gupta"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "2:00-2:50",
-          "subject": "L-SE",
-          "room": "CR04",
-          "teacher": "Sneha Bansal"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "11:00-12:50",
-          "subject": "P-CN",
-          "room": "Lab-4",
-          "teacher": "Prof. Sharma"
-        }
-      ]
-    },
-    "10": {
-      "batch": "F9",
-      "Monday": [
-        {
-          "time": "9:00-9:50",
-          "subject": "T-DBMS",
-          "room": "CR03",
-          "teacher": "Dr. Mehta"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "1:00-1:50",
-          "subject": "T-CN",
-          "room": "CR01",
-          "teacher": "Prof. Sharma"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "2:00-2:50",
-          "subject": "L-SE",
-          "room": "CR04",
-          "teacher": "Sneha Bansal"
-        }
-      ]
-    },
-    "11": {
-      "batch": "F10",
-      "Monday": [
-        {
-          "time": "10:00-10:50",
-          "subject": "L-OOPS",
-          "room": "CR02",
-          "teacher": "Neha Gupta"
-        }
-      ],
-      "Tuesday": [
-        {
-          "time": "9:00-10:50",
-          "subject": "P-SE",
-          "room": "Lab-2",
-          "teacher": "Sneha Bansal"
-        }
-      ],
-      "Wednesday": [
-        {
-          "time": "1:00-1:50",
-          "subject": "T-DSA",
-          "room": "CR06",
-          "teacher": "Anjali Singh"
-        }
-      ]
     }
-  }
 ]
