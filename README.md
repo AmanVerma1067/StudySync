@@ -1,13 +1,14 @@
 # StudySync - Timetable App 📚
-
 <div align="center">
 <img src="assets/splash.png" alt="StudySync Banner" width="300" style="border-radius: 8px; border: 1px solid #eee; margin-bottom: 20px;"/>
 </div>
 
 A beautiful Flutter timetable and academic calendar application that helps students track their class schedules and college events with ease. Now supports full **Academic Calendar** view, semester switching, and modern UI enhancements.
 
-## Features ✨
+## Related Repositories 🔗
+- **Backend API & Admin Panel**: [StudySync Server](https://github.com/AmanVerma1067/StudySync-Server) - Contains the REST API for remote data management and the frontend admin panel for editing timetables.
 
+## Features ✨
 - 🗓️ Weekly timetable view with tab navigation
 - 📆 Academic calendar view for odd/even semesters
 - 🔄 Liquid pull-to-refresh functionality
@@ -19,10 +20,13 @@ A beautiful Flutter timetable and academic calendar application that helps stude
 - 🔄 Automatic sync with remote timetable data
 
 ## Screenshots 📸
+<div align="center">
 
-| Light Mode                                                                                                      | Dark Mode                                                                                                     |
-|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| <img src="assets/lightv2.jpeg" alt="Light Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/dark.png" alt="Dark Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> |
+| Light Mode | Dark Mode | Academic Calendar |
+|------------|-----------|-------------------|
+| <img src="assets/light.png" alt="Light Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/dark.png" alt="Dark Mode" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> | <img src="assets/calendar.png" alt="Academic Calendar" width="250" style="border-radius: 8px; border: 1px solid #eee;"/> |
+
+</div>
 
 ## Installation ⚙️
 
@@ -37,14 +41,17 @@ A beautiful Flutter timetable and academic calendar application that helps stude
    git clone https://github.com/yourusername/studysync.git
    cd studysync
    ```
+
 #### 2. Install dependencies:
 ```bash
 flutter pub get
 ```
+
 #### 3. Generate splash screen (run once):
 ```bash
 flutter pub run flutter_native_splash:create
 ```
+
 #### 4. Run the app:
 ```bash
 flutter run
@@ -67,11 +74,11 @@ lib/
     └── timetable_card.dart      # UI components
 ```
 
-### Dependencies 📦
+## Dependencies 📦
 - http - For API calls
 - shared_preferences - For local caching
 - flutter_native_splash - For splash screen
 - flutter_launcher_icons - For app icons
 
-### Support ❤️
+## Support ❤️
 If you like this project, please consider giving it a ⭐️ on GitHub!
