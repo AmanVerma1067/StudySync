@@ -107,9 +107,9 @@ class _TimetableScreenState extends State<TimetableScreen>
     setState(() => isLoading = true);
     try {
       final response = await http.get(
-        Uri.parse('https://ttserver-7zps.onrender.com/api/timetable'),
+        Uri.parse('https://timetable-api-9xsz.onrender.com/api/timetable'),
         headers: {
-          'x-api-key': '123abc456def789ghi',
+          'x-api-key': 'tt_api_key',
           'Content-Type': 'application/json',
         },
       );
