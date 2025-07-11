@@ -55,7 +55,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
               return const Center(child: CircularProgressIndicator());
             }
             if (snap.hasError) {
-              return Center(child: Text('Error: \${snap.error}'));
+              return Center(child: Text('Error: ${snap.error}'));
             }
             final data = snap.data!;
             return TabBarView(
@@ -83,16 +83,22 @@ class _CalendarScreenState extends State<CalendarScreen> {
         _sectionHeader('Examinations', Icons.assignment),
         ..._buildExams((sem['examinations'] as Map<String, dynamic>)),
 
+        _sectionHeader('Attendance Reviews', Icons.fact_check),
+        _buildKeyValueCard(sem['attendance_reviews'] as Map<String, dynamic>, Colors.amber),
+
+        _sectionHeader('Project Activities', Icons.assignment_turned_in),
+        _buildKeyValueCard(sem['project_activities'] as Map<String, dynamic>, Colors.green),
+
+        _sectionHeader('Other Events', Icons.event),
+        _buildKeyValueCard(sem['other_events'] as Map<String, dynamic>, Colors.deepOrangeAccent),
+
+        _sectionHeader('Pre-Registration', Icons.app_registration),
+        _buildKeyValueCard(sem['pre_registration'] as Map<String, dynamic>, Colors.indigo),
+
         _sectionHeader('Holidays', Icons.celebration),
         _buildListCard(
           (sem['holidays'] as List).map((e) => '${e['date']}  •  ${e['name']}').toList(),
           Colors.pinkAccent,
-        ),
-
-        _sectionHeader('Events', Icons.event),
-        _buildListCard(
-          (sem['events'] as List).map((e) => '${e['date']}  •  ${e['name']}').toList(),
-          Colors.deepOrangeAccent,
         ),
 
         _sectionHeader('Breaks', Icons.weekend),
