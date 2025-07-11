@@ -1,158 +1,215 @@
 {
   "odd_semester": {
     "registration": {
-      "all_students": "24 July 2024",
-      "first_semester_btech": "15 July 2024",
-      "first_semester_diploma": "16 July 2024",
-      "first_semester_masters": "24 July 2024",
-      "add_drop_last_date": "31 July 2024",
-      "deactivation_unregistered": "01 August 2024"
+      "first_semester_btech": "10 July 2025",
+      "all_students": "24 July 2025",
+      "add_drop_last_date": "31 July 2025",
+      "mooc_registration_last_date": "07 August 2025"
     },
     "classes_commencement": {
-      "first_year_ug": "15 July 2024",
-      "all_batches_except_first_year": "24 July 2024"
+      "first_year_ug": "11 July 2025",
+      "all_batches_except_first_year": "24 July 2025"
     },
     "examinations": {
       "t1_exam": {
-        "schedule": "02-07 September 2024",
-        "results_upload": "16 September 2024"
+        "schedule": "29 August - 06 September 2025",
+        "answer_sheets_showing": "12 September 2025",
+        "results_upload": "15 September 2025"
       },
       "t2_exam": {
-        "schedule": "14-19 October 2024",
-        "results_upload": "28 October 2024"
+        "schedule": "10 - 18 October 2025",
+        "answer_sheets_showing": "31 October 2025",
+        "results_upload": "03 November 2025"
+      },
+      "makeup_exam": {
+        "schedule": "11-15 November 2025"
       },
       "end_semester_exam": {
-        "schedule": "05-14 December 2024",
-        "results_upload": "24 December 2024"
+        "schedule": "01 - 13 December 2025",
+        "answer_sheets_showing": "17 December 2025",
+        "provisional_grades": "19 December 2025 (AN)",
+        "grades_freezing": "20 December 2025",
+        "results_publication": "22 December 2025"
+      },
+      "supplementary_exam": {
+        "registration": "22 December 2025 - 24 December 2025",
+        "schedule": "29-31 December 2025",
+        "grades_submission": "03 January 2026",
+        "results_declaration": "05 January 2026"
       }
+    },
+    "attendance_reviews": {
+      "before_t1": "27 August 2025",
+      "before_t2": "08 October 2025",
+      "end_semester": "25 November 2025"
+    },
+    "project_activities": {
+      "summer_training_viva": "16 September 2025",
+      "mid_term_seminars_results": "10 October 2025",
+      "seminar_topic_allocation": "08 October 2025",
+      "end_term_seminars_results": "01 December 2025",
+      "minor_project_additional_time": "14 December 2025",
+      "major_project_allocation": "18 November 2025",
+      "minor_project_allocation": "18 November 2025",
+      "project_submission": "25 November 2025",
+      "final_project_viva": "20 November 2025"
+    },
+    "other_events": {
+      "ebullience_welcome": "23 August 2025",
+      "jiit_alumni_meet": "20 December 2025",
+      "student_feedback_collection": "21 November 2025",
+      "classes_end": "28 November 2025",
+      "timetable_committee_meeting": "28 November 2025",
+      "debar_list_display": "29 November 2025"
+    },
+    "pre_registration": {
+      "electives_list_submission": "20 October 2025",
+      "draft_curriculum_sharing": "22 October 2025",
+      "curriculum_finalization": "23 - 28 October 2025",
+      "orientation_program": "05 - 07 November 2025",
+      "student_pre_registration": "08 - 11 November 2025"
     },
     "holidays": [
       {
-        "name": "Independence Day",
-        "date": "15 August 2024"
+        "name": "Rakshabandhan",
+        "date": "09 August 2025"
       },
       {
-        "name": "Raksha Bandhan",
-        "date": "19 August 2024"
+        "name": "Independence Day",
+        "date": "15 August 2025"
       },
       {
         "name": "Janmashtami",
-        "date": "26 August 2024"
+        "date": "16 August 2025"
       },
       {
-        "name": "Gandhi Jayanti",
-        "date": "02 October 2024"
+        "name": "Gandhi Jayanti / Dussehra",
+        "date": "02 October 2025"
       },
       {
-        "name": "Dushehra",
-        "date": "12 October 2024"
-      },
-      {
-        "name": "Diwali",
-        "date": "01 November 2024"
+        "name": "Deepawali",
+        "date": "20-21 October 2025"
       },
       {
         "name": "Govardhan Puja",
-        "date": "02 November 2024"
+        "date": "22 October 2025"
       },
       {
         "name": "Guru Nanak Jayanti",
-        "date": "15 November 2024"
+        "date": "05 November 2025"
       },
       {
         "name": "Christmas",
-        "date": "25 December 2024"
-      }
-    ],
-    "events": [
-      {
-        "name": "Orientation Day",
-        "date": "14 July 2024"
-      },
-      {
-        "name": "Guest Lecture Series",
-        "date": "20 August 2024"
-      },
-      {
-        "name": "Tech Fest",
-        "date": "10 September 2024"
+        "date": "25 December 2025"
       }
     ],
     "breaks": {
-      "mid_semester_break": "28 October - 03 November 2024",
-      "end_semester_break": "15 December 2024 - 01 January 2025"
+      "mid_semester_break": "19 - 26 October 2025",
+      "end_semester_break": "14 December 2025 - 01 January 2026"
     }
   },
   "even_semester": {
     "registration": {
-      "all_students": "03 January 2025",
-      "add_drop_last_date": "09 January 2025",
-      "deactivation_unregistered": "10 January 2025"
+      "first_semester_btech": "05 January 2026",
+      "all_students": "02 January 2026",
+      "add_drop_last_date": "09 January 2026",
+      "mooc_registration_last_date": "16 January 2026"
     },
     "classes_commencement": {
-      "all_batches_except_first_year": "03 January 2025"
+      "all_batches_except_first_year": "02 January 2026"
     },
     "examinations": {
       "t1_exam": {
-        "schedule": "10-15 February 2025",
-        "results_upload": "24 February 2025"
+        "schedule": "10 - 18 February 2026",
+        "answer_sheets_showing": "24 February 2026",
+        "results_upload": "28 February 2026"
       },
       "t2_exam": {
-        "schedule": "24-31 March 2025",
-        "results_upload": "09 April 2025"
+        "schedule": "24 March - 02 April 2026",
+        "answer_sheets_showing": "08 April 2026",
+        "results_upload": "11 April 2026"
+      },
+      "makeup_exam": {
+        "schedule": "21-25 April 2026"
       },
       "end_semester_exam": {
-        "schedule": "12-22 May 2025",
-        "results_upload": "02 June 2025"
+        "schedule": "11 - 23 May 2026",
+        "answer_sheets_showing": "27 May 2026",
+        "provisional_grades": "29 May 2026 (AN)",
+        "grades_freezing": "30 May 2026",
+        "results_publication": "01 June 2026"
+      },
+      "supplementary_exam": {
+        "registration": "01 June - 03 June 2026",
+        "schedule": "05-08 June 2026",
+        "grades_submission": "13 June 2026",
+        "results_declaration": "13 June 2026"
       }
+    },
+    "attendance_reviews": {
+      "before_t1": "08 February 2026",
+      "before_t2": "22 March 2026",
+      "end_semester": "06 May 2026"
+    },
+    "project_activities": {
+      "mid_term_seminars_results": "24 March 2026",
+      "end_term_seminars_results": "11 May 2026",
+      "minor_project_additional_time": "30 May 2026",
+      "major_project_allocation": "22 April 2026",
+      "minor_project_allocation": "22 April 2026",
+      "project_submission": "07 May 2026"
+    },
+    "other_events": {
+      "jyc_function": "06-08 February 2026",
+      "student_feedback_collection": "01 May 2026",
+      "classes_end": "08 May 2026",
+      "timetable_committee_meeting": "09 May 2026",
+      "debar_list_display": "08 May 2026",
+      "disciplinary_committee_meeting": "25 May 2026"
+    },
+    "pre_registration": {
+      "electives_list_submission": "04 April 2026",
+      "draft_curriculum_sharing": "06 April 2026",
+      "curriculum_finalization": "07 - 11 April 2026",
+      "orientation_program": "15 - 17 April 2026",
+      "student_pre_registration": "18 - 21 April 2026"
     },
     "holidays": [
       {
-        "name": "Makar Sankranti",
-        "date": "14 January 2025"
-      },
-      {
         "name": "Republic Day",
-        "date": "26 January 2025"
+        "date": "26 January 2026"
       },
       {
         "name": "Maha Shivratri",
-        "date": "26 February 2025"
+        "date": "15 February 2026"
       },
       {
         "name": "Holi",
-        "date": "14 March 2025"
+        "date": "03-04 March 2026"
       },
       {
-        "name": "Id-ul-Fitr",
-        "date": "01 April 2025"
+        "name": "Eid-Ul-Fitr",
+        "date": "21 March 2026"
+      },
+      {
+        "name": "Ram Navami",
+        "date": "26 March 2026"
       },
       {
         "name": "Mahavir Jayanti",
-        "date": "10 April 2025"
-      },
-      {
-        "name": "Ram Navmi",
-        "date": "06 April 2025"
+        "date": "31 March 2026"
       },
       {
         "name": "Ambedkar Jayanti",
-        "date": "14 April 2025"
-      }
-    ],
-    "events": [
-      {
-        "name": "Cultural Fest",
-        "date": "28 Feb - 2 March 2025"
+        "date": "14 April 2026"
       },
       {
-        "name": "Alumni Meet",
-        "date": "01 March 2025"
+        "name": "Budh Purnima",
+        "date": "01 May 2026"
       }
     ],
     "breaks": {
-      "mid_semester_break": "10-16 March 2025",
-      "end_semester_break": "22 May - 23 July 2025"
+      "mid_semester_break": "01 - 08 March 2026",
+      "end_semester_break": "27 May - 24 July 2026"
     }
-  }
-}
+}}
