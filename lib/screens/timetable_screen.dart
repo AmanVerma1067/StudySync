@@ -22,16 +22,48 @@ class _TimetableScreenState extends State<TimetableScreen>
   bool isLoading = false;
   bool showingTimetable = true; // NEW: To toggle between timetable and calendar
 
+  // final Map<String, Color> subjectColors = {
+  //   'ADC': Colors.blueAccent,
+  //   'DSP': Colors.purpleAccent,
+  //   'AE': Colors.teal,
+  //   'ML': Colors.orange,
+  //   'UHV': Colors.cyan,
+  //   'IE': Colors.green,
+  //   'FA': Colors.redAccent,
+  //   'Litr': Colors.cyanAccent,
+  //   'Psycho': Colors.amber,
+  // };
   final Map<String, Color> subjectColors = {
-    'ADC': Colors.blueAccent,
-    'DSP': Colors.purpleAccent,
-    'AE': Colors.teal,
-    'ML': Colors.orange,
-    'UHV': Colors.cyan,
-    'IE': Colors.green,
-    'FA': Colors.redAccent,
-    'Litr': Colors.cyanAccent,
-    'Psycho': Colors.amber,
+    // HSS-2
+    'ED': Colors.lightGreen,        // Entrepreneurship Development
+    'PP': Colors.pink[200]!,          // Positive Psychology
+    'SOY': Colors.lime,             // Sociology of Youth
+    'PED': Colors.brown,            // Planning & Economic Development
+    'FM': Colors.redAccent,         // Financial Management
+    // 'LALL': Colors.grey,            // Common LALL classes
+
+    // DE-1
+    'IDIVP': Colors.teal,    // Introduction to Digital Image and video processing
+    'MPMC': Colors.yellow[700]!,  //Microprocessors & microcontrollers
+
+    // SE-1
+    'MC': Colors.deepOrange,          // Matrix Computations
+    'MS': Colors.teal,                // Materials Science
+    'NSE': Colors.green,              // Nuclear Science and Engineering
+    'LTA': Colors.red,                // Laser Technology and Applications
+    // 'QME': Colors.black,              // Quantum Mechanics for Engineers
+    'BNM': Colors.indigo,             // Basic Numerical Methods
+    'SITA': Colors.lightBlue,         // Statistical Info Theory with Apps
+    'LRI': Colors.amber,              // Logical Reasoning and Inequalities
+
+    // Electronics & Communication
+    'EMFT': Colors.blueAccent,              // Electromagnetic Field Theory
+    'PSPC': Colors.indigo,              // Py for signal processing and communication
+    'ESL': Colors.lightBlue,       // Embedded Systems Lab
+    'AI': Colors.deepPurple,       // Comprehensive AI
+    'DSA': Colors.lime,      // Data Structures and Algorithms
+    'MP1': Colors.purpleAccent,         // Minor Project-1
+
   };
 
   @override
