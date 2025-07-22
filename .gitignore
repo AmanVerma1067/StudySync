@@ -33,6 +33,22 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Flutter Web build output
+build/web/
+
+# Web specific
+web/.dart_tool/
+web/.idea/
+web/.vscode/
+web/.DS_Store
+web/favicon.png
+web/icons/
+
+# Node/npm (if using Vercel or other JS tooling)
+node_modules/
+package-lock.json
+yarn.lock
+
 # Symbolication related
 app.*.symbols
 
