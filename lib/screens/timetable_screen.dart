@@ -63,6 +63,7 @@ class _TimetableScreenState extends State<TimetableScreen>
     'AI': Colors.deepPurple,       // Comprehensive AI
     'DSA': Colors.lime,      // Data Structures and Algorithms
     'MP1': Colors.purpleAccent,         // Minor Project-1
+    'ICTK': Colors.green,  //Indian Constitution and traditional knowledge
 
   };
 
@@ -300,7 +301,7 @@ class _TimetableScreenState extends State<TimetableScreen>
             ),
             const SizedBox(height: 2),
             Text(
-              '~ Made with 💙 by Aman Verma',
+              '✨ Made by Aman Verma 💫',
               style: TextStyle(
                 fontSize: 12,
                 fontStyle: FontStyle.italic,
