@@ -5,6 +5,17 @@
 
 A beautiful Flutter timetable and academic calendar application that helps students track their class schedules and college events with ease. Now supports full **Academic Calendar** view, semester switching, and modern UI enhancements.
 
+---
+
+## 🌐 Now Available on Web!
+
+StudySync is now available as a **Flutter web app**!  
+You can use all features directly in your browser, with the same modern UI and experience as the mobile app.
+
+- **Try it online:** [https://your-vercel-or-custom-domain-link](https://your-vercel-or-custom-domain-link)
+
+---
+
 ## Related Repositories 🔗
 - **Backend API & Admin Panel**: [StudySync Server](https://github.com/AmanVerma1067/StudySync-Server) - Contains the REST API for remote data management and the frontend admin panel for editing timetables.
 
@@ -18,6 +29,7 @@ A beautiful Flutter timetable and academic calendar application that helps stude
 - 🔍 Quick week switching (previous/next week)
 - 📲 Splash screen for better user experience
 - 🔄 Automatic sync with remote timetable data
+- 💻 **Web support**: Use StudySync in your browser!
 
 ## Screenshots 📸
 <div align="center">
@@ -52,10 +64,22 @@ flutter pub get
 flutter pub run flutter_native_splash:create
 ```
 
-#### 4. Run the app:
+#### 4. Run the app (mobile/desktop):
 ```bash
 flutter run
 ```
+
+#### 5. Run the web app locally:
+```bash
+flutter run -d chrome
+```
+
+#### 6. Build for web (for deployment):
+```bash
+flutter build web
+```
+
+---
 
 ## Project Structure 📂
 ```bash
