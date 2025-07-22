@@ -1,11 +1,11 @@
 {
-    "name": "studysync",
+    "name": "StudySync",
     "short_name": "studysync",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Timetable and academic planner app for college students.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
