@@ -12,7 +12,7 @@ A beautiful Flutter timetable and academic calendar application that helps stude
 StudySync is now available as a **Flutter web app**!  
 You can use all features directly in your browser, with the same modern UI and experience as the mobile app.
 
-- **Try it online:** [https://your-vercel-or-custom-domain-link](https://your-vercel-or-custom-domain-link)
+- **Try it online:** [studysync.aman1067.xyz](https://studysync.aman1067.xyz/)
 
 ---
 
