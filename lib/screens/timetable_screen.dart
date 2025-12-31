@@ -34,37 +34,21 @@ class _TimetableScreenState extends State<TimetableScreen>
   //   'Psycho': Colors.amber,
   // };
   final Map<String, Color> subjectColors = {
-    // HSS-2
-    'ED': Colors.lightGreen,        // Entrepreneurship Development
-    'PP': Colors.pink[200]!,          // Positive Psychology
-    'SOY': Colors.lime,             // Sociology of Youth
-    'PED': Colors.brown,            // Planning & Economic Development
-    'FM': Colors.redAccent,         // Financial Management
-    // 'LALL': Colors.grey,            // Common LALL classes
+    // Core Subjects
+    'Cyber Security': Colors.redAccent,                   // CS
+    'Computer Networks & Security': Colors.deepPurple,    // CNS
+    'VLSI Design': Colors.indigo,                         // VLSI
+    'Telecom Networks': Colors.teal,                       // TN
+    'Cloud Computing': Colors.lightBlue,                  // CC
+    'Control Systems': Colors.orange[800]!,               // CSYS
 
-    // DE-1
-    'IDIVP': Colors.teal,    // Introduction to Digital Image and video processing
-    'MPMC': Colors.yellow[700]!,  //Microprocessors & microcontrollers
+    // Labs (Optional: reuse main color or slight variation)
+    'VLSI Design Lab': Colors.indigoAccent,
+    'Telecom Networks Lab': Colors.tealAccent[700]!,
 
-    // SE-1
-    'MC': Colors.deepOrange,          // Matrix Computations
-    'MS': Colors.teal,                // Materials Science
-    'NSE': Colors.green,              // Nuclear Science and Engineering
-    'LTA': Colors.red,                // Laser Technology and Applications
-    // 'QME': Colors.black,              // Quantum Mechanics for Engineers
-    'BNM': Colors.indigo,             // Basic Numerical Methods
-    'SITA': Colors.lightBlue,         // Statistical Info Theory with Apps
-    'LRI': Colors.amber,              // Logical Reasoning and Inequalities
-
-    // Electronics & Communication
-    'EMFT': Colors.blueAccent,              // Electromagnetic Field Theory
-    'PSPC': Colors.indigo,              // Py for signal processing and communication
-    'ESL': Colors.lightBlue,       // Embedded Systems Lab
-    'AI': Colors.deepPurple,       // Comprehensive AI
-    'DSA': Colors.lime,      // Data Structures and Algorithms
-    'MP1': Colors.purpleAccent,         // Minor Project-1
-    'ICTK': Colors.green,  //Indian Constitution and traditional knowledge
-
+    // HSS & Electives
+    'Literature & Adaption': Colors.pink[400]!,           // MKT
+    'Ethical Hacking Workshop': Colors.green[700]!,       // ADSA
   };
 
   @override
